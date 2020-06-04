@@ -19,10 +19,6 @@ module.exports = withCSS(
       ) {
         return {
           "/": { page: "/" },
-          "/writings/guide": {
-            page: "/writings/[slug]",
-            query: { slug: "guide" },
-          },
         };
       },
     })
