@@ -57,7 +57,7 @@ function Layout({ children }) {
       <div className="content">{children}</div>
 
       <footer>
-        <Link href="/">Uncopyright</Link>
+        <Link href="/uncopyright">Uncopyright</Link>
         {" | "}
         Made with <Coffee />, <Code /> and <Heart /> by{" "}
         <a href="https://github.com/Geektrovert" target="_blank">
