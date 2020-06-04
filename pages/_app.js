@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:description" content={og ? og.description : `A modern next.js blog theme`} />
         <meta property="og:image" content={og ? og.image : `https://nebula-blog.netlify.app/og/default.svg`} />
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         <title>{title || `Nebula`}</title>

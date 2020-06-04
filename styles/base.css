@@ -1,6 +1,3 @@
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://use.typekit.net/cyw3eir.css");
-
 :root {
   --secondary-color: #669;
   --font-color: #0e0e0f;
@@ -34,7 +31,7 @@
 }
 
 html {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -247,7 +244,7 @@ a {
 }
 
 .writing-container *:not(pre) > code {
-  font-family: ibm-plex-mono, Monaco, "Lucida Console";
+  font-family: "IBM Plex Mono", Monaco, "Lucida Console", monospace;
   background: var(--highlight-color);
   color: var(--heading-color);
   padding: 2px 7px 5px;
