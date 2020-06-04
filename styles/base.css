@@ -1,25 +1,23 @@
 :root {
   --secondary-color: #66a;
-  --font-color: #0e0e0f;
   --bg-color: #f5f7fe;
   --bg-shadow: #e5e7ef;
   --heading-color: #000;
   --highlight-color: #f0db4f;
   --hr-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3px" height="3px" viewBox="0 0 3 3" fill="rgb(68,68,68)"><polygon points="0,0.5 0,1.5 1.5,3 2.5,3"/><polygon points="2.5,0 1.5,0 3,1.5 3,0.5"/></svg>');
-  --writing-body: #224;
+  --font-color: #224;
   --uses-secondary-color: #bbb;
   --card-color: #fefeff;
 }
 
 [data-theme="dark"] {
   --secondary-color: #99f;
-  --font-color: #fff;
   --bg-color: #2a2f3f;
   --bg-shadow: #000;
   --heading-color: #fff;
   --highlight-color: #f00080;
   --hr-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3px" height="3px" viewBox="0 0 3 3" fill="rgb(204,204,204)"><polygon points="0,0.5 0,1.5 1.5,3 2.5,3"/><polygon points="2.5,0 1.5,0 3,1.5 3,0.5"/></svg>');
-  --writing-body: #eef;
+  --font-color: #eef;
   --card-color: #1a1f2f;
 }
 
@@ -88,7 +86,6 @@ body {
 
 .logo a {
   font-size: 1.2rem;
-  color: var(--font-color);
   text-decoration: none;
   margin: -5px 0 0;
   display: inline-block;
@@ -100,12 +97,12 @@ body {
   background: none;
   cursor: pointer;
   cursor: hand;
-  color: var(--heading-color);
+  color: var(--font-color);
   outline: 0;
 }
 
 .theme-switch-button svg {
-  fill: var(--heading-color);
+  fill: var(--font-color);
 }
 
 h1,
@@ -184,7 +181,7 @@ a {
 }
 
 a:hover {
-  color: var(--writing-body);
+  color: var(--font-color);
 }
 
 .date-row {
@@ -201,6 +198,7 @@ a:hover {
 }
 
 .writing-row .writing-title {
+  color: var(--font-color);
   margin-top: auto;
   margin-bottom: auto;
   font-weight: 600;
@@ -231,7 +229,7 @@ a:hover {
   padding: 4px 0;
   line-height: 1.8em;
   font-size: 20px;
-  color: var(--writing-body);
+  color: var(--font-color);
 }
 
 .writing-container blockquote {
@@ -245,7 +243,7 @@ a:hover {
   line-height: 1.8em;
   margin-bottom: 40px;
   font-size: 20px;
-  color: var(--writing-body);
+  color: var(--font-color);
 }
 
 .writing-container *:not(pre) > code {
@@ -321,7 +319,7 @@ footer {
 }
 
 .author {
-  color: var(--writing-body);
+  color: var(--font-color);
   margin-bottom: 40px;
 }
 
