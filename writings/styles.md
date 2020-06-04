@@ -1,5 +1,5 @@
 ---
-title: "Guidelines"
+title: "Styles"
 date: "2020-06-02"
 og:
   description: "All about styles"
