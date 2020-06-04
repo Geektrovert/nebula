@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Sun, Moon } from "react-feather";
+import { RiMoonClearLine as Moon } from "react-icons/ri";
+import { FiSun as Sun } from "react-icons/fi";
 import Link from "next/link";
 
 function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
@@ -44,7 +45,11 @@ function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
         </Link>
 
         <button className="theme-switch-button" onClick={() => switchTheme()}>
-          {theme === "dark" ? <Sun /> : <Moon />}
+          {theme === "dark" ? (
+            <Sun className="icon" />
+          ) : (
+            <Moon className="icon" />
+          )}
         </button>
       </div>
 
