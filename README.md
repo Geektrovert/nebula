@@ -1,6 +1,14 @@
 # Nebula
 
 A modern blog template writen in Next.js
+Features:
+
+- Write posts in markdown
+- Neat and clean modern UI
+- Code syntax highlighting with specific line change highlighting featues
+- Reading progress indicator
+- Awesome [icon set](https://react-icons.github.io/react-icons/)
+- Ready to ship with [netlify](https://netlify.com) and [vercel](https://vercel.com/)(previously known as `now`)
 
 ---
 
@@ -9,9 +17,16 @@ A modern blog template writen in Next.js
 After forking/cloning the project run:
 
 ```bash
-yarn
+yarn # to intall dependencies
+yarn dev # to run development server
 ```
 
-```bash
-yarn dev
-```
+---
+
+## Development
+
+ToDo:
+
+- Search by tags
+- Text search
+- Blog series with multiple posts
