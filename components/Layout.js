@@ -3,7 +3,7 @@ import { RiMoonClearLine as Moon } from "react-icons/ri";
 import { FiSun as Sun } from "react-icons/fi";
 import Link from "next/link";
 
-function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
+function Layout({ children }) {
   const onLoadTheme =
     typeof localStorage !== "undefined" && localStorage.getItem("BLOG_THEME");
   const [theme, setTheme] = useState(onLoadTheme);
@@ -29,11 +29,6 @@ function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
 
     setMounted(true);
   }, [theme]);
-
-  const containerProps = {
-    ...(isHomepage && { md: 12 }),
-    ...(!isHomepage && { md: 8, mdOffset: 2 }),
-  };
 
   if (!mounted) return <div />;
 
