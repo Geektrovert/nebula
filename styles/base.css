@@ -49,7 +49,7 @@ body {
 }
 
 .top-menu {
-  padding: 1rem 4rem 1rem 4rem;
+  padding: 3rem 6rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -361,7 +361,7 @@ footer {
   }
 
   .top-menu {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   .writing-row {
