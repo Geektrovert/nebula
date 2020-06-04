@@ -206,6 +206,10 @@ a:hover {
   line-height: 1.5em;
 }
 
+.writing-container {
+  margin: 5rem 0;
+}
+
 .writing-container h1,
 .writing-container h2,
 .writing-container h3,
@@ -320,12 +324,42 @@ footer {
 
 .author {
   color: var(--font-color);
-  margin-bottom: 40px;
+  margin-bottom: 1.5rem;
 }
 
 .author::before {
   color: var(--secondary-color);
   content: "written by ";
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem;
+  color: var(--bg-color);
+  background-color: var(--font-color);
+  border-radius: 0.12rem;
+}
+
+.tag:hover {
+  color: var(--heading-color);
+  background-color: var(--highlight-color);
+}
+
+.tag + .tag {
+  margin-left: 0.25rem;
+}
+
+.title-tags {
+  margin-top: auto;
+  color: var(--font-color);
 }
 
 /* Override scroll progress */

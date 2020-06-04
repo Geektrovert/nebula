@@ -6,6 +6,7 @@ og:
   image: ""
 author:
   name: "Samnan Rahee"
+tags: "hello,world,blog"
 ---
 
 Hello world! This is the very first post of this blog!

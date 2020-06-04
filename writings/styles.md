@@ -6,6 +6,7 @@ og:
   image: ""
 author:
   name: "Samnan Rahee"
+tags: "style"
 ---
 
 # Heading 1

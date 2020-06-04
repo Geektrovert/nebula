@@ -6,6 +6,7 @@ og:
   image: ""
 author:
   name: "Samnan Rahee"
+tags: "code,style,blog"
 ---
 
 This is where we start:

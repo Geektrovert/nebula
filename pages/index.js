@@ -25,7 +25,7 @@ function Homepage({ writings }) {
         <div className="writing-list">
           {writings.map(({ document, slug }) => {
             const {
-              data: { title, date },
+              data: { title, date, tags },
             } = document;
 
             return (
@@ -33,7 +33,15 @@ function Homepage({ writings }) {
                 <a>
                   <div className="writing-row" key={title}>
                     <span className="writing-title">{title}</span>
-
+                    <div className="title-tags">
+                      <div className="tags">
+                        {tags.split(",").map((tag) => (
+                          <div key={tag} className="tag">
+                            {tag}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                     <div className="date-row">
                       <div className="writing-date">{formatDate(date)}</div>
                       {freshWriting(date) && <div className="pulse" />}

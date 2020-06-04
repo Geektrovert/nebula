@@ -8,7 +8,7 @@ import CodeBlock from "../../components/CodeBlock";
 
 function Writing({ content, data }) {
   const frontmatter = data;
-  const { title, author } = frontmatter;
+  const { title, author, tags } = frontmatter;
 
   return (
     <>
@@ -45,6 +45,15 @@ function Writing({ content, data }) {
                 },
               }}
             />
+          </div>
+
+          <div className="tags">
+            <span style={{ marginRight: "1rem" }}>Tags:</span>
+            {tags.split(",").map((tag) => (
+              <div key={tag} className="tag">
+                {tag}
+              </div>
+            ))}
           </div>
         </div>
       </Layout>
