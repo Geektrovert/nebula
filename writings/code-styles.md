@@ -36,7 +36,7 @@ def another_function():
 just_a_function() #inline comment
 ```
 
-Let's update some code:
+Whoa! How to do that? Start your code block with this: `py:7-8`. Now let's update some code:
 
 ```py:!-8
 print("hello world!")
@@ -51,7 +51,7 @@ def another_function():
 just_a_function() #inline comment
 ```
 
-Let's remove the code highlighted in red:
+That's cool! Do this by writing `py:!-8`. Let's remove the code highlighted in red:
 
 ```py:-3-5,-10
 print("hello world!")
@@ -66,7 +66,7 @@ def another_function():
 just_a_function() #inline comment
 ```
 
-This is the final code:
+You can do this by starting your code block with `py:-3-5,-10`. This is the final code:
 
 ```py
 print("hello world!")
