@@ -25,14 +25,17 @@ function Homepage({ writings }) {
         <div className="writing-list">
           {writings.map(({ document, slug }) => {
             const {
-              data: { title, date, tags },
+              data: { title, date, tags, og },
             } = document;
 
             return (
               <Link href="/writings/[slug]" as={`/writings/${slug}`}>
                 <a>
                   <div className="writing-row" key={title}>
-                    <span className="writing-title">{title}</span>
+                    <div className="writing-description">
+                      <div className="writing-title">{title}</div>
+                      <div className="writing-subtitle">{og.description}</div>
+                    </div>
                     <div className="title-tags">
                       <div className="tags">
                         {tags.split(",").map((tag) => (

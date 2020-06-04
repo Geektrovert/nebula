@@ -136,6 +136,7 @@ h6 {
 }
 
 .writing-row {
+  color: var(--font-color);
   position: relative;
   width: 18rem;
   height: 10rem;
@@ -198,12 +199,20 @@ a:hover {
 }
 
 .writing-row .writing-title {
-  color: var(--font-color);
-  margin-top: auto;
-  margin-bottom: auto;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.5em;
+}
+
+.writing-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  line-height: 1.2rem;
+}
+
+.writing-description {
+  margin-bottom: auto;
 }
 
 .writing-container {

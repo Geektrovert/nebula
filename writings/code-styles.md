@@ -2,7 +2,7 @@
 title: "How to style code blocks"
 date: "2020-06-05"
 og:
-  description: "All about code"
+  description: "All about styling your code! This is a short description that summarizes this cool post."
   image: ""
 author:
   name: "Samnan Rahee"
