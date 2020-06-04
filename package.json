@@ -1,16 +1,16 @@
 {
-  "name": "telmo",
+  "name": "nebula",
   "version": "1.0.0",
-  "description": "A tale of code & design",
+  "description": "A modern Next.js blog theme",
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
     "start": "next start",
-    "build:static": "next build && next export"
+    "build": "next build",
+    "export": "next build && next export"
   },
-  "author": "Telmo Goncalves <@telmo>",
-  "license": "ISC",
+  "author": "Samnan Rahee",
+  "license": "MIT",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
