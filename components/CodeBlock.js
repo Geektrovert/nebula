@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { tomorrowNightBlue } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { shadesOfPurple } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const preStyle = {
@@ -124,7 +124,7 @@ class CodeBlock extends PureComponent {
       >
         <SyntaxHighlighter
           language={language}
-          style={tomorrowNightBlue}
+          style={shadesOfPurple}
           customStyle={preStyle}
           codeTagProps={codeProps}
           wrapLines
