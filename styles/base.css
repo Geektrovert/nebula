@@ -178,8 +178,13 @@ h6 {
 }
 
 a {
-  color: var(--font-color);
+  font-weight: 600;
+  color: var(--secondary-color);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--writing-body);
 }
 
 .date-row {
@@ -265,11 +270,23 @@ hr {
 .writing-container a {
   color: var(--heading-color);
   text-decoration: none;
-  border-bottom: 0.15rem var(--heading-color) dashed;
+  position: relative;
 }
 
-.writing-container a:hover {
+.writing-container a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
   background-color: var(--highlight-color);
+  transition: height 0.175s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.writing-container a:hover::after {
+  height: 100%;
 }
 
 .copy-to-clipboard {
