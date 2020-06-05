@@ -1,0 +1,15 @@
+{
+    "alias": "nebula.now.sh",
+    "headers": [{
+        "source": "/(.*)",
+        "headers": [{
+                "key": "Cache-Control",
+                "value": "dist, s-maxage=1, stale-while-revalidate"
+            },
+            {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+            }
+        ]
+    }]
+}
