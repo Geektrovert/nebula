@@ -186,7 +186,7 @@ a:hover {
 }
 
 .date-row {
-  margin-top: auto;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -359,21 +359,23 @@ footer {
   font-weight: 600;
   cursor: pointer;
   padding: 0.2rem;
-  color: var(--bg-color);
-  background-color: var(--font-color);
+  color: var(--secondary-color);
   border-radius: 0.12rem;
 }
 
+.tag::before {
+  content: "#";
+}
+
 .tag:hover {
-  color: var(--heading-color);
-  background-color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .tag + .tag {
   margin-left: 0.25rem;
 }
 
-.title-tags {
+.writing-row .tags {
   margin-top: auto;
   color: var(--font-color);
 }

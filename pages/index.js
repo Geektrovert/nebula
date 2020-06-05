@@ -38,9 +38,9 @@ function Homepage({ writings }) {
                       <div className="writing-title">{title}</div>
                       <div className="writing-subtitle">{og.description}</div>
                     </div>
-                    <div className="title-tags">
-                      <Tags tags={tagItems} />
-                    </div>
+
+                    <Tags tags={tagItems} />
+
                     <div className="date-row">
                       <div className="writing-date">{formatDate(date)}</div>
                       {freshWriting(date) && <div className="pulse" />}
