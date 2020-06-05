@@ -4,11 +4,13 @@ import ReactMarkdown from "react-markdown";
 import ProgressBar from "react-scroll-progress-bar";
 
 import Layout from "../../components/Layout";
+import Tags from "../../components/Tags";
 import CodeBlock from "../../components/CodeBlock";
 
 function Writing({ content, data }) {
   const frontmatter = data;
   const { title, author, tags } = frontmatter;
+  const tagItems = tags.split(",");
 
   return (
     <>
@@ -47,14 +49,7 @@ function Writing({ content, data }) {
             />
           </div>
 
-          <div className="tags">
-            <span style={{ marginRight: "1rem" }}>Tags:</span>
-            {tags.split(",").map((tag) => (
-              <div key={tag} className="tag">
-                {tag}
-              </div>
-            ))}
-          </div>
+          <Tags tags={tagItems} withTitle />
         </div>
       </Layout>
     </>

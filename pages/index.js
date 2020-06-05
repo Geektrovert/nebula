@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 
 import Layout from "../components/Layout";
+import Tags from "../components/Tags";
 
 function formatDate(date) {
   const options = { year: "numeric", month: "long", day: "numeric" };
@@ -27,6 +28,7 @@ function Homepage({ writings }) {
             const {
               data: { title, date, tags, og },
             } = document;
+            const tagItems = tags.split(",");
 
             return (
               <Link href="/writings/[slug]" as={`/writings/${slug}`}>
@@ -37,13 +39,7 @@ function Homepage({ writings }) {
                       <div className="writing-subtitle">{og.description}</div>
                     </div>
                     <div className="title-tags">
-                      <div className="tags">
-                        {tags.split(",").map((tag) => (
-                          <div key={tag} className="tag">
-                            {tag}
-                          </div>
-                        ))}
-                      </div>
+                      <Tags tags={tagItems} />
                     </div>
                     <div className="date-row">
                       <div className="writing-date">{formatDate(date)}</div>
