@@ -324,11 +324,18 @@ hr {
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 4rem;
   text-align: center;
   font-size: 0.7rem;
-  padding: 2rem 0;
   color: var(--secondary-color);
+}
+
+.footer-item {
+  padding: 0.5rem;
 }
 
 .author {
@@ -433,5 +440,8 @@ footer {
 
   .text-transition {
     display: block !important;
+  }
+  footer {
+    flex-direction: column;
   }
 }
