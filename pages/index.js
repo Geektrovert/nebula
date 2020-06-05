@@ -68,6 +68,12 @@ function Homepage({ writings }) {
                 {filter}
               </div>
             ))}
+            <button
+              className="btn"
+              onClick={() => filterDispatcher({ type: "RESET_FILTER" })}
+            >
+              clear
+            </button>
           </div>
         )}
 

@@ -410,6 +410,20 @@ footer {
   font-size: 1rem;
 }
 
+.filters button {
+  margin-left: 1rem;
+  padding: 0.3rem 0.6rem;
+  background-color: var(--highlight-color);
+  color: var(--font-color);
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.filters button:hover {
+  background-color: var(--font-color);
+  color: var(--highlight-color);
+}
+
 /* Override scroll progress */
 .writing-progress > div {
   background: var(--highlight-color) !important;
