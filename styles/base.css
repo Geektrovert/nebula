@@ -72,7 +72,7 @@ body {
   z-index: -1;
   width: 2rem;
   height: 130%;
-  transition: all 0.175s ease-in;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .logo:hover::after {
