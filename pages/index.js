@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import Layout from "../components/Layout";
 import Tags from "../components/Tags";
+import Filters from "../components/Filters";
 
 function formatDate(date) {
   const options = { year: "numeric", month: "long", day: "numeric" };
@@ -55,26 +56,7 @@ function Homepage({ writings }) {
     <>
       <Layout isHomepage>
         {filters.size !== 0 && (
-          <div className="filters">
-            <div className="filter-label">Filter:</div>
-            {[...filters].map((filter) => (
-              <div
-                key={filter}
-                className="tag"
-                onClick={() =>
-                  filterDispatcher({ type: "REMOVE_FILTER", filter: filter })
-                }
-              >
-                {filter}
-              </div>
-            ))}
-            <button
-              className="btn"
-              onClick={() => filterDispatcher({ type: "RESET_FILTER" })}
-            >
-              clear
-            </button>
-          </div>
+          <Filters filters={filters} filterDispatcher={filterDispatcher} />
         )}
 
         <div className="writing-list">
