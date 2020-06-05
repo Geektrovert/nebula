@@ -1,6 +1,7 @@
 # Nebula
 
 A modern blog template writen in Next.js
+
 Features:
 
 - Write posts in markdown
