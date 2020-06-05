@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import matter from "gray-matter";
 import Link from "next/link";
 
@@ -20,34 +20,90 @@ function freshWriting(date) {
 }
 
 function Homepage({ writings }) {
+  const [visibleWritings, setVisibleWritings] = useState(writings);
+  const filterReducer = (state = new Set([]), action) => {
+    switch (action.type) {
+      case "ADD_FILTER":
+        return new Set([...state, action.filter]);
+      case "REMOVE_FILTER":
+        return new Set([...state].filter((filter) => filter !== action.filter));
+      case "RESET_FILTER":
+        return new Set([]);
+      default:
+        return state;
+    }
+  };
+  const [filters, filterDispatcher] = useReducer(filterReducer, new Set([]));
+
+  useEffect(() => {
+    if (filters.size !== 0) {
+      setVisibleWritings(
+        [...writings].filter(({ document }) => {
+          let flag = false;
+          [...filters].map((filter) => {
+            if (document.data.tags.split(",").includes(filter)) flag = true;
+          });
+          return flag;
+        })
+      );
+    } else {
+      setVisibleWritings(writings);
+    }
+  }, [filters]);
+
   return (
     <>
       <Layout isHomepage>
+        {filters.size !== 0 && (
+          <div className="filters">
+            <div className="filter-label">Filter:</div>
+            {[...filters].map((filter) => (
+              <div
+                key={filter}
+                className="tag"
+                onClick={() =>
+                  filterDispatcher({ type: "REMOVE_FILTER", filter: filter })
+                }
+              >
+                {filter}
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="writing-list">
-          {writings.map(({ document, slug }) => {
+          {visibleWritings.map(({ document, slug }) => {
             const {
               data: { title, date, tags, og },
             } = document;
             const tagItems = tags.split(",");
 
             return (
-              <Link href="/writings/[slug]" as={`/writings/${slug}`}>
-                <a>
-                  <div className="writing-row" key={title}>
-                    <div className="writing-description">
+              <div className="writing-row" key={title}>
+                <div className="writing-description">
+                  <Link href="/writings/[slug]" as={`/writings/${slug}`}>
+                    <a>
                       <div className="writing-title">{title}</div>
-                      <div className="writing-subtitle">{og.description}</div>
-                    </div>
+                    </a>
+                  </Link>
+                  <div className="writing-subtitle">{og.description}</div>
+                </div>
 
-                    <Tags tags={tagItems} />
+                <Tags
+                  tags={tagItems}
+                  onClick={(filter) => {
+                    filterDispatcher({
+                      type: "ADD_FILTER",
+                      filter: filter,
+                    });
+                  }}
+                />
 
-                    <div className="date-row">
-                      <div className="writing-date">{formatDate(date)}</div>
-                      {freshWriting(date) && <div className="pulse" />}
-                    </div>
-                  </div>
-                </a>
-              </Link>
+                <div className="date-row">
+                  <div className="writing-date">{formatDate(date)}</div>
+                  {freshWriting(date) && <div className="pulse" />}
+                </div>
+              </div>
             );
           })}
         </div>

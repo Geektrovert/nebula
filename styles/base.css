@@ -177,6 +177,14 @@ h6 {
   left: 0;
 }
 
+.writing-row a {
+  color: var(--font-color);
+}
+
+.writing-row a:hover {
+  color: var(--secondary-color);
+}
+
 a {
   font-weight: 600;
   color: var(--secondary-color);
@@ -382,6 +390,21 @@ footer {
   color: var(--font-color);
 }
 
+.filters {
+  display: flex;
+  margin: 0 2.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--card-color);
+}
+
+.filter-label {
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
 /* Override scroll progress */
 .writing-progress > div {
   background: var(--highlight-color) !important;
@@ -445,6 +468,11 @@ footer {
   .text-transition {
     display: block !important;
   }
+
+  .filters {
+    margin: 0;
+  }
+
   footer {
     flex-direction: column;
   }
