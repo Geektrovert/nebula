@@ -4,6 +4,7 @@ A modern blog template writen in Next.js
 Features:
 
 - Write posts in markdown
+- Filter posts by tags
 - Neat and clean modern UI
 - Code syntax highlighting with specific line change highlighting featues
 - Reading progress indicator
