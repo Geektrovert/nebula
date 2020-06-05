@@ -68,28 +68,30 @@ function Homepage({ writings }) {
 
             return (
               <div className="writing-row" key={title}>
-                <div className="writing-description">
-                  <Link href="/writings/[slug]" as={`/writings/${slug}`}>
-                    <a>
+                <Link href="/writings/[slug]" as={`/writings/${slug}`}>
+                  <a>
+                    <div className="writing-description">
                       <div className="writing-title">{title}</div>
-                    </a>
-                  </Link>
-                  <div className="writing-subtitle">{og.description}</div>
-                </div>
+                      <div className="writing-subtitle">{og.description}</div>
+                    </div>
+                  </a>
+                </Link>
 
-                <Tags
-                  tags={tagItems}
-                  onClick={(filter) => {
-                    filterDispatcher({
-                      type: "ADD_FILTER",
-                      filter: filter,
-                    });
-                  }}
-                />
+                <div>
+                  <Tags
+                    tags={tagItems}
+                    onClick={(filter) => {
+                      filterDispatcher({
+                        type: "ADD_FILTER",
+                        filter: filter,
+                      });
+                    }}
+                  />
 
-                <div className="date-row">
-                  <div className="writing-date">{formatDate(date)}</div>
-                  {freshWriting(date) && <div className="pulse" />}
+                  <div className="date-row">
+                    <div className="writing-date">{formatDate(date)}</div>
+                    {freshWriting(date) && <div className="pulse" />}
+                  </div>
                 </div>
               </div>
             );

@@ -181,10 +181,6 @@ h6 {
   color: var(--font-color);
 }
 
-.writing-row a:hover {
-  color: var(--secondary-color);
-}
-
 a {
   font-weight: 600;
   color: var(--secondary-color);
@@ -222,7 +218,12 @@ a:hover {
 }
 
 .writing-description {
-  margin-bottom: auto;
+  height: 8rem;
+  border-bottom: solid;
+  border-color: var(--secondary-color);
+  border-width: 1px;
+  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .writing-container {
@@ -386,7 +387,6 @@ footer {
 }
 
 .writing-row .tags {
-  margin-top: auto;
   color: var(--font-color);
 }
 
