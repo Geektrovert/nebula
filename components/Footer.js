@@ -3,7 +3,6 @@ import {
   FiCoffee as Coffee,
   FiCode as Code,
   FiHeart as Heart,
-  FiGithub as GH,
 } from "react-icons/fi";
 import Link from "next/link";
 
@@ -22,8 +21,8 @@ const Footer = () => (
     </div>
     <div className="footer-item">
       Source code on{" "}
-      <a href="https://github.com/Geektrovert/nebula" target="_blank">
-        <GH />
+      <a href="https://github.com/YAS-opensource/nebula" target="_blank">
+        GitHub
       </a>
     </div>
   </footer>
