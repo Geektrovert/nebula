@@ -38,3 +38,5 @@ ToDo:
 - Search by tags
 - Text search
 - Blog series with multiple posts
+- Add Disqus for comment section
+- Implement tests (should have done it sooner)
