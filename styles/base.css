@@ -23,9 +23,11 @@
 
 ::-moz-selection {
   background: var(--highlight-color);
+  color: var(--font-color);
 }
 ::selection {
   background: var(--highlight-color);
+  color: var(--font-color);
 }
 
 html {
