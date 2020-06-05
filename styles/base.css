@@ -398,11 +398,16 @@ footer {
   padding: 0.8rem 1rem;
   border-radius: 0.25rem;
   background-color: var(--card-color);
+  align-items: center;
 }
 
 .filter-label {
   font-weight: 600;
   margin-right: 1rem;
+}
+
+.filters .tag {
+  font-size: 1rem;
 }
 
 /* Override scroll progress */
