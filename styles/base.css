@@ -532,11 +532,6 @@ button:hover {
     width: 80vw;
   }
 
-  .writing-row .writing-date {
-    text-align: left;
-    padding: 10px 0;
-  }
-
   .text-transition {
     display: block !important;
   }
