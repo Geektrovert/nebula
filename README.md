@@ -37,6 +37,7 @@ ToDo:
 
 - Search by tags
 - Text search
+- Make it PWA
 - Blog series with multiple posts
 - Add Disqus for comment section
 - Implement tests (should have done it sooner)
