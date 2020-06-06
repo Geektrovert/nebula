@@ -5,6 +5,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Tags from "../components/Tags";
 import Filters from "../components/Filters";
+import SearchBar from "../components/SearchBar";
 
 function formatDate(date) {
   const options = { year: "numeric", month: "long", day: "numeric" };
@@ -36,6 +37,17 @@ function Homepage({ writings }) {
   };
   const [filters, filterDispatcher] = useReducer(filterReducer, new Set([]));
 
+  const searchAction = () => {
+    const searchInput = document.getElementById("search-input");
+
+    if (searchInput.value.length !== 0) {
+      searchInput.value.split(",").map((filter) => {
+        filterDispatcher({ type: "ADD_FILTER", filter: filter });
+      });
+      searchInput.value = "";
+    }
+  };
+
   useEffect(() => {
     if (filters.size !== 0) {
       setVisibleWritings(
@@ -55,6 +67,8 @@ function Homepage({ writings }) {
   return (
     <>
       <Layout isHomepage>
+        <SearchBar onSearch={searchAction} />
+
         {filters.size !== 0 && (
           <Filters filters={filters} filterDispatcher={filterDispatcher} />
         )}
