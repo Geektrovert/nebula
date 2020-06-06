@@ -13,14 +13,6 @@ module.exports = withCSS(
         });
         return config;
       },
-      exportPathMap: async function (
-        defaultPathMap,
-        { dev, dir, outDir, distDir, buildId }
-      ) {
-        return {
-          "/": { page: "/" },
-        };
-      },
     })
   )
 );
