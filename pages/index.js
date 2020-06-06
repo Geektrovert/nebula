@@ -40,9 +40,9 @@ function Homepage({ writings }) {
     if (filters.size !== 0) {
       setVisibleWritings(
         [...writings].filter(({ document }) => {
-          let flag = false;
+          let flag = true;
           [...filters].map((filter) => {
-            if (document.data.tags.split(",").includes(filter)) flag = true;
+            if (!document.data.tags.split(",").includes(filter)) flag = false;
           });
           return flag;
         })
