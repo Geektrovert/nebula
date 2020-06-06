@@ -2,6 +2,7 @@ import React from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import ProgressBar from "react-scroll-progress-bar";
+import { glob } from "glob";
 
 import Layout from "../../components/Layout";
 import Tags from "../../components/Tags";
@@ -56,12 +57,31 @@ function Writing({ content, data }) {
   );
 }
 
-Writing.getInitialProps = async (context) => {
-  const { slug } = context.query;
+export async function getStaticProps({ ...context }) {
+  const { slug } = context.params;
   const content = await import(`../../writings/${slug}.md`);
   const data = matter(content.default);
 
-  return { ...data };
-};
+  return {
+    props: {
+      data: data.data,
+      content: data.content,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const posts = glob.sync("writings/*.md");
+  const slugs = posts.map((slug) =>
+    slug.split("/")[1].replace(/ /g, "-").slice(0, -3).trim()
+  );
+
+  const paths = slugs.map((slug) => `/writings/${slug}`);
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
 export default Writing;

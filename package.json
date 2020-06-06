@@ -14,6 +14,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "next": "^9.4",
     "next-transpile-modules": "^2.3.1",
