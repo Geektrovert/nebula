@@ -21,7 +21,9 @@ function freshWriting(date) {
   return today - writingDate < 60 * 60 * 1000 * 24 * 2; // 2 days old
 }
 
-function Homepage({ writings }) {
+const Homepage = (props) => {
+  const writings = props.writings;
+
   const [visibleWritings, setVisibleWritings] = useState(writings);
   const filterReducer = (state = new Set([]), action) => {
     switch (action.type) {
@@ -35,6 +37,7 @@ function Homepage({ writings }) {
         return state;
     }
   };
+
   const [filters, filterDispatcher] = useReducer(filterReducer, new Set([]));
 
   const searchAction = () => {
@@ -114,21 +117,27 @@ function Homepage({ writings }) {
       </Layout>
     </>
   );
-}
+};
 
-Homepage.getInitialProps = async (context) => {
+export async function getStaticProps() {
   const writings = ((context) => {
     const keys = context.keys();
     const values = keys.map(context);
+
     const data = keys.map((key, index) => {
       const slug = key
         .replace(/^.*[\\\/]/, "")
         .split(".")
         .slice(0, -1)
         .join(".");
+
       const value = values[index];
       const document = matter(value.default);
-      return { document, slug };
+
+      return {
+        document: { content: document.content, data: document.data },
+        slug,
+      };
     });
 
     return data
@@ -139,8 +148,11 @@ Homepage.getInitialProps = async (context) => {
       );
   })(require.context("../writings", true, /\.md$/));
 
+  const props = { writings: writings };
+  // console.log(props);
   return {
-    writings,
+    props: props,
   };
-};
+}
+
 export default Homepage;
