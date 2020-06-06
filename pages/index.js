@@ -26,7 +26,7 @@ function Homepage({ writings }) {
   const filterReducer = (state = new Set([]), action) => {
     switch (action.type) {
       case "ADD_FILTER":
-        return new Set([...state, action.filter]);
+        return new Set([...state, action.filter.trim()]);
       case "REMOVE_FILTER":
         return new Set([...state].filter((filter) => filter !== action.filter));
       case "RESET_FILTER":
