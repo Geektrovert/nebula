@@ -22,9 +22,9 @@ function freshWriting(date) {
 }
 
 const Homepage = (props) => {
-  const writings = props.writings;
+  const posts = props.posts;
 
-  const [visibleWritings, setVisibleWritings] = useState(writings);
+  const [visiblePosts, setVisiblePosts] = useState(posts);
   const filterReducer = (state = new Set([]), action) => {
     switch (action.type) {
       case "ADD_FILTER":
@@ -53,8 +53,8 @@ const Homepage = (props) => {
 
   useEffect(() => {
     if (filters.size !== 0) {
-      setVisibleWritings(
-        [...writings].filter(({ document }) => {
+      setVisiblePosts(
+        [...posts].filter(({ document }) => {
           let flag = true;
           [...filters].map((filter) => {
             if (!document.data.tags.split(",").includes(filter)) flag = false;
@@ -63,7 +63,7 @@ const Homepage = (props) => {
         })
       );
     } else {
-      setVisibleWritings(writings);
+      setVisiblePosts(posts);
     }
   }, [filters]);
 
@@ -77,7 +77,7 @@ const Homepage = (props) => {
         )}
 
         <div className="writing-list">
-          {visibleWritings.map(({ document, slug }) => {
+          {visiblePosts.map(({ document, slug }) => {
             const {
               data: { title, date, tags, og },
             } = document;
@@ -85,7 +85,7 @@ const Homepage = (props) => {
 
             return (
               <div className="writing-row" key={title}>
-                <Link href="/writings/[slug]" as={`/writings/${slug}`}>
+                <Link href="/posts/[slug]" as={`/posts/${slug}`}>
                   <a>
                     <div className="writing-description">
                       <div className="writing-title">{title}</div>
@@ -120,7 +120,7 @@ const Homepage = (props) => {
 };
 
 export async function getStaticProps() {
-  const writings = ((context) => {
+  const posts = ((context) => {
     const keys = context.keys();
     const values = keys.map(context);
 
@@ -146,9 +146,9 @@ export async function getStaticProps() {
         (a, b) =>
           new Date(b.document.data.date) - new Date(a.document.data.date)
       );
-  })(require.context("../writings", true, /\.md$/));
+  })(require.context("../posts", true, /\.md$/));
 
-  const props = { writings: writings };
+  const props = { posts: posts };
   // console.log(props);
   return {
     props: props,

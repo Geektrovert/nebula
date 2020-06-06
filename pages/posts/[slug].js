@@ -59,7 +59,7 @@ function Writing({ content, data }) {
 
 export async function getStaticProps({ ...context }) {
   const { slug } = context.params;
-  const content = await import(`../../writings/${slug}.md`);
+  const content = await import(`../../posts/${slug}.md`);
   const data = matter(content.default);
 
   return {
@@ -71,12 +71,12 @@ export async function getStaticProps({ ...context }) {
 }
 
 export async function getStaticPaths() {
-  const posts = glob.sync("writings/*.md");
+  const posts = glob.sync("posts/*.md");
   const slugs = posts.map((slug) =>
     slug.split("/")[1].replace(/ /g, "-").slice(0, -3).trim()
   );
 
-  const paths = slugs.map((slug) => `/writings/${slug}`);
+  const paths = slugs.map((slug) => `/posts/${slug}`);
 
   return {
     paths,
