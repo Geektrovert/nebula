@@ -519,6 +519,27 @@ button:hover {
   font-size: 1.5rem;
 }
 
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-title {
+  margin-bottom: 0;
+}
+
+.error-img {
+  width: 20rem;
+  height: auto;
+}
+
+.error-description {
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
 @media only screen and (max-width: 960px) {
   .content {
     width: inherit;
