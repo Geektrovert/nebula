@@ -428,7 +428,7 @@ footer {
 
 .search-button {
   width: 2.9rem;
-  height: 2.8rem;
+  height: 2.75rem;
   margin: 0;
   font-size: 1.5rem;
   line-height: 0;
@@ -474,6 +474,7 @@ button:hover {
 }
 
 .theme-switch-button:hover {
+  color: var(--font-color);
   background-color: var(--bg-color);
 }
 

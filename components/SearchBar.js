@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
           onKeyPress={(e) => {
             e.key === "Enter" && onSearch();
           }}
-          placeholder="Search tags, example: style"
+          placeholder="Search by tags, i.e. style"
           required
         />
         <button type="submit" className="search-button" onClick={onSearch}>
