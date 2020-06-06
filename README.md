@@ -5,7 +5,7 @@ A modern blog template writen in Next.js
 Features:
 
 - Write posts in markdown
-- Filter posts by tags on homepage
+- Search/Filter posts by tags on homepage
 - Neat and clean modern UI
 - Beautiful Light and Dark theme with preference awareness
 - Code syntax highlighting with specific line change highlighting featues
@@ -35,7 +35,6 @@ npm run dev # to run development server
 
 ToDo:
 
-- Search by tags
 - Text search
 - Make it PWA
 - Blog series with multiple posts
